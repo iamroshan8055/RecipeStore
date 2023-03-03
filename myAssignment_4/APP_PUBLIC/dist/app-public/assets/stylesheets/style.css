@@ -1,0 +1,111 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: white;
+  color:black;
+}
+
+.fnt_crsv{
+  font-family: Lobster, cursive;
+}
+
+/* ul li #actv{
+  background-color:#b10b2d;
+  color: white;
+} */
+
+.add_rvw:hover{
+  background-color:#d52549;
+  color: white;
+}
+.add_rvw:active{
+  background-color:#b10b2d;
+  color: white;
+}
+
+ul li{
+  background-color: white;
+  color: black;
+}
+ul li a.lnk{
+  background-color: white;
+  color: black;
+}
+ul li a.lnk:active{
+  background-color:#b10b2d;
+  color: white;
+}
+ul li a.lnk:hover{
+  background-color:#d52549;
+  color: white;
+}
+/* ul li a.lnk:visited{
+  background-color: #d52549;
+  color: white;
+} */
+ul li a.eddt{
+  transform: translateY(-100%);
+  display: inline-block;
+}
+ul li a.eddt:active{
+  background-color:#b10b2d;
+  color: white;
+}
+ul li a.eddt:hover{
+  background-color:#d52549;
+  color: white;
+}
+ul li a{
+  color: black;
+}
+
+#str_name{
+  font-size: 35px;
+  color:#b10b2d;
+}
+.rcp{
+  color:#b10b2d;
+}
+.str_clr{
+  color:#FFD700;
+}
+.fcilty{
+  background:#d9d9d9;
+  color: black;
+}
+.fcilty:hover{
+  background-color: #b10b2d;
+  color: white;
+  transition: 0.7s;
+}
+#btn_click:hover{
+  background-color:#b10b2d;
+  color: white;
+}
+#recipe_imgs:hover{
+  /* border-radius: 15px; */
+  opacity: 85%;
+  transition: 1s;
+  box-shadow: -5px 5px 10px hsl(0, 0%, 60%); 
+}
+ul.m_nav{
+  margin-left:660px;
+}
+ul.edt_dlt_btn{
+  margin-left:1050px;
+}
+ul li{
+  font-size: 19px;
+  margin-left:5px;
+  margin-right:5px;
+}
+#like_icon:hover{
+  font-size: 18px;
+  transition: 1s;
+}
+
+.watermarked {
+  opacity: 0.7;
+}
+
+

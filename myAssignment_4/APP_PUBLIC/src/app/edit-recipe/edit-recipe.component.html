@@ -1,0 +1,59 @@
+<form action="" method="post" role="form" (ngSubmit)="updateNewRecipe(editRecipe)">
+    <table>
+        <tr>
+            <td>
+                <div class="form-group" data-role="fieldcontain"></div>
+                <fieldset data-role="controlgroup"><label for="rec_name">Recipe Name</label></fieldset>
+            </td>
+            <td><input class="form-control fnt_crsv" id="rec_name" type="text" [(ngModel)]="editRecipe.rec_name" placeholder="Enter Recipe Name"
+                    name="rec_name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group" data-role="fieldcontain"></div>
+                <fieldset data-role="controlgroup"><label for="rec_img_URL">Image</label></fieldset>
+            </td>
+            <td>
+                <input class="form-control fnt_crsv" id="rec_img_URL" type="file" [(ngModel)]="editRecipe.rec_img_URL" name="rec_img_URL" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group" data-role="fieldcontain"></div>
+                <fieldset data-role="controlgroup"><label for="rec_detail">Recipe Detail</label></fieldset>
+            </td>
+            <td>
+                <input class="form-control fnt_crsv" id="rec_detail" type="text" [(ngModel)]="editRecipe.rec_detail" placeholder="Enter Recipe Details"
+                    name="rec_detail" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group" data-role="fieldcontain"></div>
+                <fieldset data-role="controlgroup"><label for="likes">Likes</label></fieldset>
+            </td>
+            <td>
+                <input class="form-control fnt_crsv" id="likes" [(ngModel)]="editRecipe.likes" type="number" value="" placeholder="Enter Likes" name="likes" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="form-group" data-role="fieldcontain"></div>
+                <fieldset data-role="controlgroup"><label for="dish_type">Dish Type</label></fieldset>
+            </td>
+            <td>
+                <input class="form-control fnt_crsv" id="dish_type" [(ngModel)]="editRecipe.dish_type" type="text" value="" placeholder="Enter Dish type(ig. sweet/spicy..)" name="dish_type" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div data-role="fieldcontain"> </div><input class="btn btn-success fnt_crsv" type="submit" value="Edit"
+                    data-transition="fade" data-theme="c" />
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+</form>

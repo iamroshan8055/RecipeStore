@@ -1,0 +1,55 @@
+<!-- <p>recipe-list works!</p>  -->
+<!-- <ul> 
+  <li *ngFor="let recipe of recipes;" > 
+    <a routerLink="/recipes/{{recipe._id}}">{{recipe.rec_name}}</a> 
+  </li> 
+</ul> -->
+
+<div id="banner" class="page-header">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>{{ pghdr[0] }} <small>{{ pghdr[1] }}</small></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="row list-group">
+
+        <div *ngFor="let recipe of recipes;">
+          <div class="col-xs-12 list-group-item">
+            <h4>
+              <a routerLink="/recipes/{{ recipe._id }}"> {{ recipe.rec_name }}</a>
+              <small>&nbsp;
+                <!-- {{ rating }} -->
+                <!-- <span *ngFor="let item of [].constructor(recipe.reviews[0].rating)" class="glyphicon glyphicon-star"></span> -->
+                <!-- <span *ngFor="let item of [].constructor(5 - recipe.reviews[0].rating)" class="glyphicon glyphicon-star-empty"></span> -->
+              </small>
+              <span class="badge pull-right badge-default">
+                {{ recipe.likes }}
+                <span class="glyphicon glyphicon-heart"></span>
+              </span>
+            </h4>
+            <a routerLink="/recipes/{{ recipe._id }}">
+              <img src="assets{{ recipe.rec_img_URL }}" class="img-rounded" id="recipe_imgs" width='20%' height='30%' style='margin:5px'>
+            </a>
+            <p id="stp_sbstr" class="address">{{ shortDetails(recipe.rec_detail) }}</p>
+            <!-- <p class="address">
+              {{ recipe.rec_detail }}
+            </p> -->
+            <p>
+              <span *ngFor="let ingredient of recipe.ingredients" class="label label-warning" style="margin-right: 1%;">{{ ingredient.ing_name }}</span>&nbsp;
+            </p>
+            <hr>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-12 col-sm-12">
+  <p class="lead">
+    {{ pghdr[2] }}
+  </p>
+</div>

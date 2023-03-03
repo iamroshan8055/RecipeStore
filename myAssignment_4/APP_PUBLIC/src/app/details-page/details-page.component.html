@@ -1,0 +1,106 @@
+<div class="row page-header">
+    <div class="col-lg-12">
+        <h1 style="display:inline">{{ pghdr[0] }}</h1>
+        <ul class="nav nav-pills edt_dlt_btn">
+            <li role="presentation">
+                <a class="eddt btn btn-primary fnt_crsv" routerLink="/edit/{{ currentRecipe._id }}">Edit</a>
+            </li>
+            <li role="presentation">
+                <a class="eddt btn btn-danger fnt_crsv" routerLink="/delete/{{ currentRecipe._id }}">Delete</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12 col-md-9">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <h2>{{ currentRecipe.rec_name }}</h2>
+                <h2 class="panel-title">Ingredients </h2>
+                <div class="panel-body">
+                    <div *ngFor="let ingredient of currentRecipe.ingredients;">
+                        <span class="label label-warning">
+                            <span class="glyphicon">
+                                &nbsp;{{ ingredient.ing_name }} ({{ ingredient.quantity }} {{ ingredient.qntty_measure
+                                }})
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <h2 class="panel-title">Recipe </h2>
+            <p>{{ currentRecipe.rec_detail }}</p>
+        </div>
+        <h2 class="panel-title">Output Image</h2>
+        <a href="assets{{ currentRecipe.rec_img_URL }}" target="_blank">
+            <img class="img-responsive img-rounded" src="assets{{ currentRecipe.rec_img_URL }}" id="recipe_imgs" width="40%"
+                height="60%" style="margin:5px" />
+        </a>
+        <div class="row">
+            <div class="row">
+                <div class="col-xs-6"><a class="btn btn-default pull-right add_rvw fnt_crsv"
+                    routerLink="/recipe/{{ currentRecipe._id }}/review">Add review</a></div>
+            </div>
+        </div>
+        <h2 class="panel-title">Customer reviews</h2>
+        <div class="panel-body review-container">
+            <div *ngFor="let review of currentRecipe.reviews;">
+                <span class="rating"> </span><br/>
+                <h4 class="reviewAuthor">{{ review.user_name }}</h4>
+                <h6 class="reviewAuthor">{{ review.reviewText }}</h6>
+            </div>
+        </div>
+        <div class="col-xs-12"></div>
+    </div>
+</div>
+
+<div class="col-xs-12 col-sm-3">
+    <p class="lead">
+        {{ pghdr[2] }}
+    </p>
+</div>
+
+
+
+
+
+<!-- .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12.col-sm-6
+          h2 #{currentRecipe.rec_name}
+          h2.panel-title Ingredients 
+            .panel-body
+              each ingredient in currentRecipe.ingredients
+                span.label.label-warning
+                  span.glyphicon
+                  | &nbsp;#{ingredient.ing_name} (#{ingredient.quantity} #{ingredient.qntty_measure})
+                | &nbsp;
+          h2.panel-title Recipe  
+          p #{currentRecipe.rec_detail}
+        h2.panel-title Output Image
+        a(href=currentRecipe.rec_img_URL, target="_blank") 
+          img.img-responsive.img-rounded(src=currentRecipe.rec_img_URL, id="recipe_imgs", width='40%', height='60%', style='margin:5px')
+      .row
+        //- .col-xs-12
+        //-   .panel.panel-primary.review-panel
+            //- .panel-heading
+        //- a.btn.btn-default.pull-right(href="/location/review/new") Add review
+        .row
+          .col-xs-6
+            a.btn.btn-default.pull-right.add_rvw.fnt_crsv(href="/addreview/"+currentRecipe._id) Add review
+        h2.panel-title Customer reviews
+        .panel-body.review-container
+            each review in currentRecipe.reviews
+                span.rating
+                    +outputRating(review.rating) 
+                br
+                h4.reviewAuthor #{review.user_name} 
+                h6.reviewAuthor #{review.reviewText}
+                h6.reviewTimestamp= review.createdOn.substr(0,10)
+            .col-xs-12
+                    //-   p !{(review.reviewText).replace(/\n/g, '<br/>')}
+    .col-xs-12.col-md-3
+      p.lead #{sidebar} -->

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Recipe {\n  constructor() {\n    this._id = '';\n    this.rec_name = '';\n    this.rec_img_URL = '';\n    this.rec_detail = '';\n    this.likes = 0;\n    this.ingredients = [];\n    this.dish_type = \"\";\n    this.reviews = [];\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
